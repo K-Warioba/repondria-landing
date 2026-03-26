@@ -150,6 +150,7 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .waitlist-form {
   display: flex;
+  flex-direction: row;
   gap: 0;
   border: 1.5px solid var(--border-mid);
   border-radius: var(--r);
@@ -157,6 +158,7 @@ h1 em { font-style: italic; color: var(--gold); }
   background: white;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-shadow: var(--shadow-sm);
+  margin: 0;
 }
 .waitlist-form:focus-within {
   border-color: var(--ink);
@@ -165,6 +167,7 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .waitlist-form input {
   flex: 1;
+  min-width: 0;
   height: 54px;
   padding: 0 20px;
   border: none;
@@ -173,7 +176,8 @@ h1 em { font-style: italic; color: var(--gold); }
   font-size: 15px;
   font-weight: 300;
   color: var(--ink);
-  background: transparent;
+  background: white;
+  display: block;
 }
 .waitlist-form input::placeholder { color: var(--ink-muted); }
 
@@ -546,23 +550,32 @@ h1 em { font-style: italic; color: var(--gold); }
 .cta-form-wrap { max-width: 400px; margin: 0 auto; }
 
 .cta-input-row {
-  display: flex; gap: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
   border: 1.5px solid var(--border-mid);
   border-radius: var(--r);
   overflow: hidden;
   background: white;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s;
+  margin: 0;
 }
 .cta-input-row:focus-within { border-color: var(--ink); }
 
 .cta-input-row input {
-  flex: 1; height: 52px;
+  flex: 1;
+  min-width: 0;
+  height: 52px;
   padding: 0 18px;
-  border: none; outline: none;
+  border: none;
+  outline: none;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 15px; font-weight: 300;
+  font-size: 15px;
+  font-weight: 300;
   color: var(--ink);
+  background: white;
+  display: block;
 }
 .cta-input-row input::placeholder { color: var(--ink-muted); }
 .cta-input-row button {
