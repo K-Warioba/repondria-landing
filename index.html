@@ -4,9 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RepondrIA — Répondez à vos avis Google en 30 secondes</title>
+<meta name="description" content="RepondrIA génère des réponses aux avis Google conformes au code de déontologie de l'ONCD et au secret médical — en 30 secondes. Solution conçue pour les cabinets dentaires français." />
+<meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "RepondrIA",
+  "description": "Outil IA de réponse aux avis Google pour cabinets dentaires français, conforme au code de déontologie de l'ONCD et au secret médical.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Gratuit pendant la bêta"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Chirurgiens-dentistes, cabinets dentaires en France"
+  },
+  "inLanguage": "fr",
+  "url": "https://repondria.fr"
+}
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -93,7 +117,7 @@ nav {
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -140,7 +164,7 @@ h1 em { font-style: italic; color: var(--gold); }
 }
 
 .waitlist-label {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -200,7 +224,7 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .form-caption {
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-muted);
   display: flex; align-items: center; gap: 16px;
 }
@@ -250,7 +274,7 @@ h1 em { font-style: italic; color: var(--gold); }
   line-height: 1;
 }
 .counter-label {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--ink-muted);
   margin-top: 4px;
   font-weight: 400;
@@ -398,7 +422,7 @@ h1 em { font-style: italic; color: var(--gold); }
 }
 
 .section-eyebrow {
-  font-size: 11px; font-weight: 500;
+  font-size: 13px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 12px;
   display: flex; align-items: center; gap: 10px;
@@ -458,11 +482,61 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .feat-tag {
   display: inline-block; margin-top: 14px;
-  font-size: 11px; font-weight: 500;
+  font-size: 13px; font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--teal);
   background: var(--teal-soft);
   padding: 3px 10px; border-radius: 20px;
+}
+
+/* ── COMPARISON TABLE ── */
+.comparison {
+  padding: 0 6% 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-mid);
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+}
+.comp-table th {
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  background: var(--off-white);
+  color: var(--ink);
+  border-bottom: 1px solid var(--border-mid);
+}
+.comp-table th:first-child { width: 35%; }
+.comp-table th.highlight { background: var(--ink); color: white; text-align: center; }
+.comp-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-soft);
+  vertical-align: middle;
+}
+.comp-table td.highlight {
+  background: rgba(0,122,110,0.04);
+  text-align: center;
+  font-weight: 500;
+  color: var(--teal);
+}
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr:hover td { background: var(--off-white); }
+.comp-table tr:hover td.highlight { background: rgba(0,122,110,0.08); }
+.comp-yes { color: var(--teal); font-weight: 600; }
+.comp-no { color: #C53030; }
+.comp-partial { color: var(--gold); }
+
+@media (max-width: 700px) {
+  .comp-table { font-size: 12px; }
+  .comp-table th, .comp-table td { padding: 10px 12px; }
 }
 
 /* ── COMPLIANCE ── */
@@ -532,6 +606,7 @@ h1 em { font-style: italic; color: var(--gold); }
   font-size: 18px;
 }
 
+
 /* ── CTA BOTTOM ── */
 .cta-bottom {
   background: var(--gold-light);
@@ -543,7 +618,7 @@ h1 em { font-style: italic; color: var(--gold); }
 .cta-inner { max-width: 520px; margin: 0 auto; }
 
 .cta-eyebrow {
-  font-size: 11px; font-weight: 500;
+  font-size: 13px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 16px;
 }
@@ -603,7 +678,7 @@ h1 em { font-style: italic; color: var(--gold); }
 }
 .cta-input-row button:hover { background: #9E7E2E; }
 
-.cta-note { font-size: 12px; color: var(--ink-muted); margin-top: 12px; }
+.cta-note { font-size: 13px; color: var(--ink-muted); margin-top: 12px; }
 
 /* ── SOCIAL PROOF ── */
 .social-proof {
@@ -684,7 +759,7 @@ footer {
 
 .footer-rgpd {
   width: 100%; text-align: center;
-  font-size: 11px; color: var(--ink-muted);
+  font-size: 12px; color: var(--ink-muted);
   padding-top: 20px; border-top: 1px solid var(--border);
   font-weight: 300; letter-spacing: 0.02em;
 }
@@ -693,6 +768,22 @@ footer {
 @keyframes rise {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-dot { will-change: opacity; }
+.sp-pulse { will-change: opacity; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .eyebrow, h1, .hero-body, .waitlist-wrap, .counter-row, .hero-right {
+    opacity: 1;
+    transform: none;
+  }
+  .nav-dot, .sp-pulse { animation: none; }
 }
 
 /* ── RESPONSIVE ── */
@@ -738,15 +829,15 @@ footer {
 
     <div class="waitlist-wrap">
       <div class="social-proof">
-        <div class="sp-avatars">
-          <div class="sp-avatar" style="background:#1E3448;">DR</div>
-          <div class="sp-avatar" style="background:#007A6E;">ML</div>
-          <div class="sp-avatar" style="background:#B8973A;">PB</div>
-          <div class="sp-avatar" style="background:#4A5E72;">SC</div>
-          <div class="sp-avatar" style="background:#2D6A4F;">TF</div>
+        <div class="sp-avatars" role="img" aria-label="Avatars de praticiens inscrits">
+          <div class="sp-avatar" style="background:#1E3448;" aria-hidden="true">DR</div>
+          <div class="sp-avatar" style="background:#007A6E;" aria-hidden="true">ML</div>
+          <div class="sp-avatar" style="background:#B8973A;" aria-hidden="true">PB</div>
+          <div class="sp-avatar" style="background:#4A5E72;" aria-hidden="true">SC</div>
+          <div class="sp-avatar" style="background:#2D6A4F;" aria-hidden="true">TF</div>
         </div>
         <div class="sp-text">
-          <span class="sp-pulse"></span>
+          <span class="sp-pulse" aria-hidden="true"></span>
           <strong>47 praticiens</strong> déjà inscrits
         </div>
       </div>
@@ -900,6 +991,58 @@ footer {
   </div>
 </section>
 
+<!-- ── COMPARISON TABLE ── -->
+<div class="comparison">
+  <table class="comp-table" aria-label="Comparaison RepondrIA vs alternatives">
+    <thead>
+      <tr>
+        <th>Critère</th>
+        <th class="highlight">RepondrIA</th>
+        <th>Réponse manuelle</th>
+        <th>IA générique</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Conformité ONCD / secret médical</td>
+        <td class="highlight"><span class="comp-yes">✓ Garantie</span></td>
+        <td><span class="comp-partial">⚠ Selon rédacteur</span></td>
+        <td><span class="comp-no">✗ Non vérifiée</span></td>
+      </tr>
+      <tr>
+        <td>Temps par réponse</td>
+        <td class="highlight"><span class="comp-yes">~30 secondes</span></td>
+        <td><span class="comp-partial">10–20 minutes</span></td>
+        <td><span class="comp-partial">3–5 minutes</span></td>
+      </tr>
+      <tr>
+        <td>Protection avis négatifs</td>
+        <td class="highlight"><span class="comp-yes">✓ Inclus</span></td>
+        <td><span class="comp-no">✗ Manuel</span></td>
+        <td><span class="comp-no">✗ Non disponible</span></td>
+      </tr>
+      <tr>
+        <td>Données hébergées en France (RGPD)</td>
+        <td class="highlight"><span class="comp-yes">✓ Oui</span></td>
+        <td><span class="comp-yes">✓ Oui</span></td>
+        <td><span class="comp-no">✗ Souvent hors EU</span></td>
+      </tr>
+      <tr>
+        <td>Baromètre satisfaction patients</td>
+        <td class="highlight"><span class="comp-yes">✓ Inclus</span></td>
+        <td><span class="comp-no">✗ Non</span></td>
+        <td><span class="comp-no">✗ Non</span></td>
+      </tr>
+      <tr>
+        <td>Conçu pour dentistes français</td>
+        <td class="highlight"><span class="comp-yes">✓ Nativement</span></td>
+        <td><span class="comp-yes">✓ Oui</span></td>
+        <td><span class="comp-no">✗ Générique</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <!-- ── COMPLIANCE ── -->
 <section class="compliance">
   <div class="compliance-inner">
@@ -968,25 +1111,27 @@ footer {
   </div>
 </section>
 
+
 <!-- ── BOTTOM CTA ── -->
 <section class="cta-bottom" id="waitlist">
   <div class="cta-inner">
-    <div class="cta-eyebrow">Accès anticipé · Places limitées</div>
+    <div class="cta-eyebrow">Accès anticipé · Bêta gratuite jusqu'au 30 avril 2026</div>
     <h2 class="cta-title">Rejoignez les premiers<br>cabinets à tester RepondrIA.</h2>
     <p class="cta-sub">Les inscrits en liste d'attente bénéficient de <strong>3 mois d'accès gratuit</strong> et d'un tarif fondateur à vie. Aucune carte bancaire requise.</p>
+    <p style="font-size:13px; color:var(--ink-muted); margin-bottom:24px;">Après la bêta, à partir de <strong style="color:var(--ink);">29 € / mois</strong> — résiliable à tout moment.</p>
 
     <div class="cta-form-wrap">
       <div class="cta-social-proof">
-        <div class="sp-avatars">
-          <div class="sp-avatar" style="background:#1E3448;">DR</div>
-          <div class="sp-avatar" style="background:#007A6E;">ML</div>
-          <div class="sp-avatar" style="background:#B8973A;">PB</div>
-          <div class="sp-avatar" style="background:#4A5E72;">SC</div>
-          <div class="sp-avatar" style="background:#2D6A4F;">TF</div>
+        <div class="sp-avatars" role="img" aria-label="Avatars de praticiens inscrits">
+          <div class="sp-avatar" style="background:#1E3448;" aria-hidden="true">DR</div>
+          <div class="sp-avatar" style="background:#007A6E;" aria-hidden="true">ML</div>
+          <div class="sp-avatar" style="background:#B8973A;" aria-hidden="true">PB</div>
+          <div class="sp-avatar" style="background:#4A5E72;" aria-hidden="true">SC</div>
+          <div class="sp-avatar" style="background:#2D6A4F;" aria-hidden="true">TF</div>
         </div>
         <div class="sp-text">
-          <span class="sp-pulse"></span>
-          <strong id="cta-counter">47 praticiens</strong> déjà inscrits · <span style="color:#C53030; font-weight:500;">3 places restantes</span>
+          <span class="sp-pulse" aria-hidden="true"></span>
+          <strong>47 praticiens</strong> déjà inscrits · <span style="color:#9E7E2E; font-weight:500;">Bêta ouverte jusqu'au 30 avril</span>
         </div>
       </div>
       <form class="cta-input-row" id="cta-form" onsubmit="submitForm(event,'cta-form','cta-success')">
@@ -1038,25 +1183,6 @@ function submitForm(e, formId, successId) {
   });
 }
 
-// Subtle live counter — increments slowly to create organic urgency
-let count = 47;
-function slowTick() {
-  const delay = 25000 + Math.random() * 45000; // every 25–70s
-  setTimeout(() => {
-    count++;
-    const el = document.getElementById('cta-counter');
-    if (el) {
-      el.style.transition = 'opacity 0.3s';
-      el.style.opacity = '0';
-      setTimeout(() => {
-        el.textContent = count + ' praticiens';
-        el.style.opacity = '1';
-      }, 300);
-    }
-    slowTick();
-  }, delay);
-}
-slowTick();
 </script>
 </body>
 </html>
