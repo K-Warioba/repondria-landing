@@ -217,7 +217,18 @@ h1 em { font-style: italic; color: var(--gold); }
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+  margin-top: 12px;
 }
+.success-msg[style*='block'] { display: block !important; }
+.cta-success-msg {
+  display: none;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+  padding: 12px 0;
+}
+.cta-success-msg[style*='block'] { display: block !important; }
 
 /* ── COUNTER ── */
 .counter-row {
@@ -991,9 +1002,9 @@ footer {
 <footer>
   <a href="#" class="footer-logo">Répondr<em>IA</em></a>
   <ul class="footer-links">
-    <li><a href="#">Mentions légales</a></li>
-    <li><a href="#">Confidentialité</a></li>
-    <li><a href="#">RGPD</a></li>
+    <li><a href="https://www.iubenda.com/privacy-policy/10819987" target="_blank">Mentions légales</a></li>
+    <li><a href="https://www.iubenda.com/privacy-policy/10819987" target="_blank">Confidentialité</a></li>
+    <li><a href="https://www.iubenda.com/privacy-policy/10819987" target="_blank">RGPD</a></li>
     <li><a href="/cdn-cgi/l/email-protection#096b666763667c7b497b6c7966676d7b6068276f7b">Contact</a></li>
   </ul>
   <div class="footer-rgpd">© 2026 RepondrIA · Solution de gestion des avis Google pour cabinets dentaires en France · Toutes les réponses générées sont conformes au Code de déontologie de l'ONCD</div>
@@ -1004,12 +1015,12 @@ function submitForm(e, formId, successId) {
   e.preventDefault();
   var form = document.getElementById(formId);
   var email = form.querySelector('input[type="email"]').value;
-  var data = new FormData();
-  data.append('email', email);
-  fetch('https://tally.so/r/0QPI4B', { method: 'POST', body: data, mode: 'no-cors' });
+  if (!email) return;
+  // Open Tally form in new tab pre-filled with email
+  window.open('https://tally.so/r/0QPI4B?email=' + encodeURIComponent(email), '_blank');
+  // Show success message on page
   form.style.display = 'none';
-  var msg = document.getElementById(successId);
-  msg.style.display = 'block';
+  document.getElementById(successId).style.display = 'block';
 }
 
 // Subtle live counter — increments slowly to create organic urgency
