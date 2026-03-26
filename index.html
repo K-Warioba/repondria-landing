@@ -726,9 +726,11 @@ footer {
         </div>
       </div>
       <div class="waitlist-label">Rejoindre la liste d'attente</div>
-      <div class="waitlist-form">
-        <button onclick="window.open('https://tally.so/r/0QPI4B','_blank')">M'inscrire</button>
-      </div>
+      <form class="waitlist-form" id="hero-form" onsubmit="submitForm(event,'hero-form','hero-success')">
+        <input type="email" name="email" placeholder="votre@cabinet.fr" required>
+        <button type="submit">M'inscrire</button>
+      </form>
+      <div class="success-msg" id="hero-success">✓ Inscription confirmée.</div>
       <div class="form-caption">
         <span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -962,9 +964,11 @@ footer {
           <strong id="cta-counter">47 praticiens</strong> déjà inscrits · <span style="color:#C53030; font-weight:500;">3 places restantes</span>
         </div>
       </div>
-      <div class="cta-input-row">
-        <button onclick="window.open('https://tally.so/r/0QPI4B','_blank')">Réserver ma place →</button>
-      </div>
+      <form class="cta-input-row" id="cta-form" onsubmit="submitForm(event,'cta-form','cta-success')">
+        <input type="email" name="email" placeholder="votre@cabinet.fr" required>
+        <button type="submit">Réserver ma place →</button>
+      </form>
+      <div class="cta-success-msg" id="cta-success">✓ Inscription confirmée.</div>
       <p class="cta-note">🔒 Vos informations ne seront jamais partagées ni revendues.</p>
     </div>
   </div>
@@ -983,6 +987,18 @@ footer {
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function submitForm(e, formId, successId) {
+  e.preventDefault();
+  var form = document.getElementById(formId);
+  var email = form.querySelector('input[type="email"]').value;
+  var data = new FormData();
+  data.append('email', email);
+  fetch('https://tally.so/r/0QPI4B', { method: 'POST', body: data, mode: 'no-cors' });
+  form.style.display = 'none';
+  var msg = document.getElementById(successId);
+  msg.style.display = 'block';
+}
+
 // Subtle live counter — increments slowly to create organic urgency
 let count = 47;
 function slowTick() {
