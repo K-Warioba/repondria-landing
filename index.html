@@ -64,9 +64,50 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── COUNTDOWN BANNER ── */
+.beta-banner {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+  background: var(--ink);
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  padding: 9px 16px;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+.beta-banner strong { color: var(--gold-light); font-weight: 500; }
+.beta-banner .countdown-chip {
+  display: inline-block;
+  background: rgba(184,151,58,0.25);
+  border: 1px solid rgba(184,151,58,0.4);
+  border-radius: 999px;
+  padding: 1px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-left: 8px;
+  letter-spacing: 0.03em;
+}
+
+/* ── ONCD BADGE (hero) ── */
+.oncd-hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--teal-soft);
+  border: 1px solid rgba(0,122,110,0.25);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
 /* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 37px; left: 0; right: 0; z-index: 100;
   height: 68px;
   padding: 0 6%;
   display: flex; align-items: center; justify-content: space-between;
@@ -107,7 +148,7 @@ nav {
 .hero {
   min-height: 100vh;
   display: flex; align-items: center;
-  padding: 100px 6% 60px;
+  padding: 140px 6% 60px;
   max-width: 1200px;
   margin: 0 auto;
   gap: 80px;
@@ -802,6 +843,12 @@ footer {
 </head>
 <body>
 
+<!-- BETA COUNTDOWN BANNER -->
+<div class="beta-banner">
+  ⏳ <strong>Bêta gratuite</strong> — accès offert jusqu'au 30 avril 2026
+  <span class="countdown-chip">J-<span id="days-num">31</span></span>
+</div>
+
 <!-- v2.1 -->
 <!-- ── NAV ── -->
 <nav>
@@ -816,6 +863,7 @@ footer {
 <section class="hero">
   <div class="hero-left">
 
+    <div class="oncd-hero-badge">✓ Conforme ONCD</div>
     <div class="eyebrow">Solution pour cabinets dentaires · France</div>
 
     <h1>
@@ -845,16 +893,16 @@ footer {
       <div class="waitlist-label">Rejoindre la liste d'attente</div>
       <form class="waitlist-form" id="hero-form" onsubmit="submitForm(event,'hero-form','hero-success')">
         <input type="email" name="email" placeholder="votre@cabinet.fr" required autocomplete="email">
-        <button type="submit">M'inscrire</button>
+        <button type="submit">Démarrer gratuitement</button>
       </form>
       <div class="success-msg" id="hero-success">✓ Inscription confirmée. Nous vous contacterons en priorité lors du lancement de la bêta.</div>
       <div class="form-caption">
         <span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          RGPD conforme
+          Hébergé en France · RGPD
         </span>
         <span>Aucune carte bancaire requise</span>
-        <span>Gratuit pendant la bêta</span>
+        <span>Gratuit jusqu'au 30 avril</span>
       </div>
     </div>
 
@@ -1119,7 +1167,7 @@ footer {
     <div class="cta-eyebrow">Accès anticipé · Bêta gratuite jusqu'au 30 avril 2026</div>
     <h2 class="cta-title">Rejoignez les premiers<br>cabinets à tester RepondrIA.</h2>
     <p class="cta-sub">Les inscrits en liste d'attente bénéficient de <strong>3 mois d'accès gratuit</strong> et d'un tarif fondateur à vie. Aucune carte bancaire requise.</p>
-    <p style="font-size:13px; color:var(--ink-muted); margin-bottom:24px;">Après la bêta, à partir de <strong style="color:var(--ink);">29 € / mois</strong> — résiliable à tout moment.</p>
+    <p style="font-size:13px; color:var(--ink-muted); margin-bottom:24px;">Après la bêta, à partir de <strong style="color:var(--ink);">25 € / mois</strong> — résiliable à tout moment.</p>
 
     <div class="cta-form-wrap">
       <div class="cta-social-proof">
@@ -1179,11 +1227,24 @@ function submitForm(e, formId, successId) {
   })
   .catch(function() {
     btn.disabled = false;
-    btn.textContent = formId === 'hero-form' ? "M'inscrire" : "Réserver ma place →";
+    btn.textContent = formId === 'hero-form' ? "Démarrer gratuitement" : "Réserver ma place →";
     alert('Une erreur est survenue. Veuillez réessayer.');
   });
 }
 
+// Countdown to April 30, 2026
+(function() {
+  var daysEl = document.getElementById('days-num');
+  if (!daysEl) return;
+  var target = new Date('2026-04-30T23:59:59');
+  function update() {
+    var diff = target - new Date();
+    if (diff <= 0) { daysEl.parentElement.textContent = 'Expiré'; return; }
+    daysEl.textContent = Math.ceil(diff / 86400000);
+  }
+  update();
+  setInterval(update, 60000);
+})();
 </script>
 </body>
 </html>
