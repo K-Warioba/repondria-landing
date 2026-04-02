@@ -4,33 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RepondrIA — Répondez à vos avis Google en 30 secondes</title>
-<meta name="description" content="RepondrIA génère des réponses aux avis Google conformes au code de déontologie de l'ONCD et au secret médical — en 30 secondes. Solution conçue pour les cabinets dentaires français." />
-<meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "RepondrIA",
-  "description": "Outil IA de réponse aux avis Google pour cabinets dentaires français, conforme au code de déontologie de l'ONCD et au secret médical.",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR",
-    "description": "Gratuit pendant la bêta"
-  },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Chirurgiens-dentistes, cabinets dentaires en France"
-  },
-  "inLanguage": "fr",
-  "url": "https://repondria.fr"
-}
-</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -64,50 +40,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── COUNTDOWN BANNER ── */
-.beta-banner {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 101;
-  background: var(--ink);
-  color: rgba(255,255,255,0.85);
-  font-size: 13px;
-  font-weight: 400;
-  text-align: center;
-  padding: 9px 16px;
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-}
-.beta-banner strong { color: var(--gold-light); font-weight: 500; }
-.beta-banner .countdown-chip {
-  display: inline-block;
-  background: rgba(184,151,58,0.25);
-  border: 1px solid rgba(184,151,58,0.4);
-  border-radius: 999px;
-  padding: 1px 9px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--gold-light);
-  margin-left: 8px;
-  letter-spacing: 0.03em;
-}
-
-/* ── ONCD BADGE (hero) ── */
-.oncd-hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--teal-soft);
-  border: 1px solid rgba(0,122,110,0.25);
-  border-radius: 999px;
-  padding: 4px 14px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--teal);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
 /* ── NAV ── */
 nav {
-  position: fixed; top: 37px; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   height: 68px;
   padding: 0 6%;
   display: flex; align-items: center; justify-content: space-between;
@@ -148,7 +83,7 @@ nav {
 .hero {
   min-height: 100vh;
   display: flex; align-items: center;
-  padding: 140px 6% 60px;
+  padding: 100px 6% 60px;
   max-width: 1200px;
   margin: 0 auto;
   gap: 80px;
@@ -158,7 +93,7 @@ nav {
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -205,7 +140,7 @@ h1 em { font-style: italic; color: var(--gold); }
 }
 
 .waitlist-label {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -215,7 +150,6 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .waitlist-form {
   display: flex;
-  flex-direction: row;
   gap: 0;
   border: 1.5px solid var(--border-mid);
   border-radius: var(--r);
@@ -223,7 +157,6 @@ h1 em { font-style: italic; color: var(--gold); }
   background: white;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-shadow: var(--shadow-sm);
-  margin: 0;
 }
 .waitlist-form:focus-within {
   border-color: var(--ink);
@@ -232,7 +165,6 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .waitlist-form input {
   flex: 1;
-  min-width: 0;
   height: 54px;
   padding: 0 20px;
   border: none;
@@ -241,8 +173,7 @@ h1 em { font-style: italic; color: var(--gold); }
   font-size: 15px;
   font-weight: 300;
   color: var(--ink);
-  background: white;
-  display: block;
+  background: transparent;
 }
 .waitlist-form input::placeholder { color: var(--ink-muted); }
 
@@ -265,7 +196,7 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .form-caption {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--ink-muted);
   display: flex; align-items: center; gap: 16px;
 }
@@ -282,18 +213,6 @@ h1 em { font-style: italic; color: var(--gold); }
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  margin-top: 12px;
-}
-.cta-success-msg {
-  display: none;
-  color: var(--teal);
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 16px;
-  padding: 14px 20px;
-  background: var(--teal-soft);
-  border: 1px solid rgba(0,122,110,0.2);
-  border-radius: var(--r);
 }
 
 /* ── COUNTER ── */
@@ -315,7 +234,7 @@ h1 em { font-style: italic; color: var(--gold); }
   line-height: 1;
 }
 .counter-label {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--ink-muted);
   margin-top: 4px;
   font-weight: 400;
@@ -463,7 +382,7 @@ h1 em { font-style: italic; color: var(--gold); }
 }
 
 .section-eyebrow {
-  font-size: 13px; font-weight: 500;
+  font-size: 11px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 12px;
   display: flex; align-items: center; gap: 10px;
@@ -523,61 +442,11 @@ h1 em { font-style: italic; color: var(--gold); }
 
 .feat-tag {
   display: inline-block; margin-top: 14px;
-  font-size: 13px; font-weight: 500;
+  font-size: 11px; font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--teal);
   background: var(--teal-soft);
   padding: 3px 10px; border-radius: 20px;
-}
-
-/* ── COMPARISON TABLE ── */
-.comparison {
-  padding: 0 6% 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.comp-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--border-mid);
-  box-shadow: var(--shadow-sm);
-  font-size: 14px;
-}
-.comp-table th {
-  padding: 16px 20px;
-  font-size: 13px;
-  font-weight: 500;
-  text-align: left;
-  background: var(--off-white);
-  color: var(--ink);
-  border-bottom: 1px solid var(--border-mid);
-}
-.comp-table th:first-child { width: 35%; }
-.comp-table th.highlight { background: var(--ink); color: white; text-align: center; }
-.comp-table td {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-  color: var(--ink-soft);
-  vertical-align: middle;
-}
-.comp-table td.highlight {
-  background: rgba(0,122,110,0.04);
-  text-align: center;
-  font-weight: 500;
-  color: var(--teal);
-}
-.comp-table tr:last-child td { border-bottom: none; }
-.comp-table tr:hover td { background: var(--off-white); }
-.comp-table tr:hover td.highlight { background: rgba(0,122,110,0.08); }
-.comp-yes { color: var(--teal); font-weight: 600; }
-.comp-no { color: #C53030; }
-.comp-partial { color: var(--gold); }
-
-@media (max-width: 700px) {
-  .comp-table { font-size: 12px; }
-  .comp-table th, .comp-table td { padding: 10px 12px; }
 }
 
 /* ── COMPLIANCE ── */
@@ -647,7 +516,6 @@ h1 em { font-style: italic; color: var(--gold); }
   font-size: 18px;
 }
 
-
 /* ── CTA BOTTOM ── */
 .cta-bottom {
   background: var(--gold-light);
@@ -659,7 +527,7 @@ h1 em { font-style: italic; color: var(--gold); }
 .cta-inner { max-width: 520px; margin: 0 auto; }
 
 .cta-eyebrow {
-  font-size: 13px; font-weight: 500;
+  font-size: 11px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 16px;
 }
@@ -678,32 +546,23 @@ h1 em { font-style: italic; color: var(--gold); }
 .cta-form-wrap { max-width: 400px; margin: 0 auto; }
 
 .cta-input-row {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
+  display: flex; gap: 0;
   border: 1.5px solid var(--border-mid);
   border-radius: var(--r);
   overflow: hidden;
   background: white;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s;
-  margin: 0;
 }
 .cta-input-row:focus-within { border-color: var(--ink); }
 
 .cta-input-row input {
-  flex: 1;
-  min-width: 0;
-  height: 52px;
+  flex: 1; height: 52px;
   padding: 0 18px;
-  border: none;
-  outline: none;
+  border: none; outline: none;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 15px; font-weight: 300;
   color: var(--ink);
-  background: white;
-  display: block;
 }
 .cta-input-row input::placeholder { color: var(--ink-muted); }
 .cta-input-row button {
@@ -719,7 +578,7 @@ h1 em { font-style: italic; color: var(--gold); }
 }
 .cta-input-row button:hover { background: #9E7E2E; }
 
-.cta-note { font-size: 13px; color: var(--ink-muted); margin-top: 12px; }
+.cta-note { font-size: 12px; color: var(--ink-muted); margin-top: 12px; }
 
 /* ── SOCIAL PROOF ── */
 .social-proof {
@@ -800,7 +659,7 @@ footer {
 
 .footer-rgpd {
   width: 100%; text-align: center;
-  font-size: 12px; color: var(--ink-muted);
+  font-size: 11px; color: var(--ink-muted);
   padding-top: 20px; border-top: 1px solid var(--border);
   font-weight: 300; letter-spacing: 0.02em;
 }
@@ -809,22 +668,6 @@ footer {
 @keyframes rise {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-.nav-dot { will-change: opacity; }
-.sp-pulse { will-change: opacity; }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  .eyebrow, h1, .hero-body, .waitlist-wrap, .counter-row, .hero-right {
-    opacity: 1;
-    transform: none;
-  }
-  .nav-dot, .sp-pulse { animation: none; }
 }
 
 /* ── RESPONSIVE ── */
@@ -839,109 +682,10 @@ footer {
   footer { flex-direction: column; align-items: flex-start; }
   .footer-links { flex-wrap: wrap; gap: 16px; }
 }
-
-/* ── MOBILE FIXES ── */
-@media (max-width: 600px) {
-
-  /* Banner & Nav */
-  .beta-banner { font-size: 11px; padding: 7px 12px; }
-  nav { top: 32px; padding: 0 5%; height: 58px; }
-  .nav-pill { font-size: 11px; padding: 5px 10px; }
-
-  /* Hero */
-  .hero { padding: 120px 5% 48px; gap: 36px; min-height: auto; }
-  .hero-left { max-width: 100%; }
-  h1 { font-size: 34px; line-height: 1.15; margin-bottom: 18px; }
-  .hero-body { font-size: 15px; margin-bottom: 28px; }
-  .eyebrow { font-size: 11px; margin-bottom: 18px; }
-  .oncd-hero-badge { font-size: 11px; padding: 3px 10px; }
-
-  /* Waitlist form — stack vertically on mobile */
-  .waitlist-form { flex-direction: column; border-radius: var(--r); }
-  .waitlist-form input {
-    height: 50px;
-    font-size: 16px; /* prevents iOS zoom */
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-    padding: 0 16px;
-  }
-  .waitlist-form button {
-    height: 50px;
-    width: 100%;
-    border-radius: 0;
-    font-size: 15px;
-  }
-  .form-caption { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 12px; }
-
-  /* Counter row */
-  .counter-row { gap: 12px; margin-top: 24px; padding-top: 20px; }
-  .counter-num { font-size: 22px; }
-  .counter-label { font-size: 11px; }
-
-  /* Hide hero mockup on very small screens */
-  .hero-right { display: none; }
-
-  /* Social proof */
-  .social-proof { flex-wrap: wrap; gap: 8px; }
-
-  /* Sections */
-  .features, .how, .comparison { padding: 48px 5%; }
-  .section-title { font-size: 26px; }
-  .section-sub { font-size: 14px; margin-bottom: 28px; }
-  .feat { padding: 24px 20px; }
-  .feat-num { font-size: 28px; }
-  .feat-title { font-size: 15px; }
-
-  /* Comparison table — scrollable */
-  .comparison { overflow-x: auto; padding: 48px 0 48px 5%; }
-  .comp-table { min-width: 480px; font-size: 12px; }
-  .comp-table th, .comp-table td { padding: 10px 12px; }
-
-  /* Compliance */
-  .compliance { padding: 48px 5%; }
-  .compliance-inner { gap: 28px; }
-
-  /* Steps */
-  .steps { gap: 24px; }
-  .step-num { font-size: 38px; }
-
-  /* CTA bottom */
-  .cta-bottom { padding: 56px 5%; }
-  .cta-form-wrap { max-width: 100%; }
-  .cta-input-row { flex-direction: column; border-radius: var(--r); }
-  .cta-input-row input {
-    height: 50px;
-    font-size: 16px; /* prevents iOS zoom */
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-    padding: 0 16px;
-  }
-  .cta-input-row button {
-    height: 50px;
-    width: 100%;
-    border-radius: 0;
-    font-size: 15px;
-  }
-  .cta-social-proof { flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
-  .cta-title { font-size: 26px; }
-  .cta-sub { font-size: 14px; }
-
-  /* Footer */
-  footer { padding: 24px 5%; flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { gap: 12px; }
-  .footer-rgpd { font-size: 11px; }
-}
 </style>
 </head>
 <body>
 
-<!-- BETA COUNTDOWN BANNER -->
-<div class="beta-banner">
-  ⏳ <strong>Bêta gratuite</strong> — accès offert jusqu'au 30 avril 2026
-  <span class="countdown-chip">J-<span id="days-num">31</span></span>
-</div>
-
-<!-- v2.1 -->
 <!-- ── NAV ── -->
 <nav>
   <a href="#" class="logo">Répondr<em>IA</em></a>
@@ -955,7 +699,6 @@ footer {
 <section class="hero">
   <div class="hero-left">
 
-    <div class="oncd-hero-badge">✓ Conforme ONCD</div>
     <div class="eyebrow">Solution pour cabinets dentaires · France</div>
 
     <h1>
@@ -970,31 +713,33 @@ footer {
 
     <div class="waitlist-wrap">
       <div class="social-proof">
-        <div class="sp-avatars" role="img" aria-label="Avatars de praticiens inscrits">
-          <div class="sp-avatar" style="background:#1E3448;" aria-hidden="true">DR</div>
-          <div class="sp-avatar" style="background:#007A6E;" aria-hidden="true">ML</div>
-          <div class="sp-avatar" style="background:#B8973A;" aria-hidden="true">PB</div>
-          <div class="sp-avatar" style="background:#4A5E72;" aria-hidden="true">SC</div>
-          <div class="sp-avatar" style="background:#2D6A4F;" aria-hidden="true">TF</div>
+        <div class="sp-avatars">
+          <div class="sp-avatar" style="background:#1E3448;">DR</div>
+          <div class="sp-avatar" style="background:#007A6E;">ML</div>
+          <div class="sp-avatar" style="background:#B8973A;">PB</div>
+          <div class="sp-avatar" style="background:#4A5E72;">SC</div>
+          <div class="sp-avatar" style="background:#2D6A4F;">TF</div>
         </div>
         <div class="sp-text">
-          <span class="sp-pulse" aria-hidden="true"></span>
+          <span class="sp-pulse"></span>
           <strong>47 praticiens</strong> déjà inscrits
         </div>
       </div>
       <div class="waitlist-label">Rejoindre la liste d'attente</div>
-      <form class="waitlist-form" id="hero-form" onsubmit="submitForm(event,'hero-form','hero-success')">
-        <input type="email" name="email" placeholder="votre@cabinet.fr" required autocomplete="email">
-        <button type="submit">Démarrer gratuitement</button>
-      </form>
-      <div class="success-msg" id="hero-success">✓ Inscription confirmée. Nous vous contacterons en priorité lors du lancement de la bêta.</div>
+      <div class="waitlist-form" id="hero-form">
+        <input type="email" id="hero-email" placeholder="adresse@cabinet.fr" autocomplete="email" />
+        <button onclick="submitHero()">M'inscrire</button>
+      </div>
+      <div class="success-msg" id="hero-success">
+        ✓ Inscription confirmée. Nous vous contacterons en priorité lors du lancement de la bêta.
+      </div>
       <div class="form-caption">
         <span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Hébergé en France · RGPD
+          RGPD conforme
         </span>
         <span>Aucune carte bancaire requise</span>
-        <span>Gratuit jusqu'au 30 avril</span>
+        <span>Gratuit pendant la bêta</span>
       </div>
     </div>
 
@@ -1132,58 +877,6 @@ footer {
   </div>
 </section>
 
-<!-- ── COMPARISON TABLE ── -->
-<div class="comparison">
-  <table class="comp-table" aria-label="Comparaison RepondrIA vs alternatives">
-    <thead>
-      <tr>
-        <th>Critère</th>
-        <th class="highlight">RepondrIA</th>
-        <th>Réponse manuelle</th>
-        <th>IA générique</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Conformité ONCD / secret médical</td>
-        <td class="highlight"><span class="comp-yes">✓ Garantie</span></td>
-        <td><span class="comp-partial">⚠ Selon rédacteur</span></td>
-        <td><span class="comp-no">✗ Non vérifiée</span></td>
-      </tr>
-      <tr>
-        <td>Temps par réponse</td>
-        <td class="highlight"><span class="comp-yes">~30 secondes</span></td>
-        <td><span class="comp-partial">10–20 minutes</span></td>
-        <td><span class="comp-partial">3–5 minutes</span></td>
-      </tr>
-      <tr>
-        <td>Protection avis négatifs</td>
-        <td class="highlight"><span class="comp-yes">✓ Inclus</span></td>
-        <td><span class="comp-no">✗ Manuel</span></td>
-        <td><span class="comp-no">✗ Non disponible</span></td>
-      </tr>
-      <tr>
-        <td>Données hébergées en France (RGPD)</td>
-        <td class="highlight"><span class="comp-yes">✓ Oui</span></td>
-        <td><span class="comp-yes">✓ Oui</span></td>
-        <td><span class="comp-no">✗ Souvent hors EU</span></td>
-      </tr>
-      <tr>
-        <td>Baromètre satisfaction patients</td>
-        <td class="highlight"><span class="comp-yes">✓ Inclus</span></td>
-        <td><span class="comp-no">✗ Non</span></td>
-        <td><span class="comp-no">✗ Non</span></td>
-      </tr>
-      <tr>
-        <td>Conçu pour dentistes français</td>
-        <td class="highlight"><span class="comp-yes">✓ Nativement</span></td>
-        <td><span class="comp-yes">✓ Oui</span></td>
-        <td><span class="comp-no">✗ Générique</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 <!-- ── COMPLIANCE ── -->
 <section class="compliance">
   <div class="compliance-inner">
@@ -1252,34 +945,34 @@ footer {
   </div>
 </section>
 
-
 <!-- ── BOTTOM CTA ── -->
 <section class="cta-bottom" id="waitlist">
   <div class="cta-inner">
-    <div class="cta-eyebrow">Accès anticipé · Bêta gratuite jusqu'au 30 avril 2026</div>
+    <div class="cta-eyebrow">Accès anticipé · Places limitées</div>
     <h2 class="cta-title">Rejoignez les premiers<br>cabinets à tester RepondrIA.</h2>
     <p class="cta-sub">Les inscrits en liste d'attente bénéficient de <strong>3 mois d'accès gratuit</strong> et d'un tarif fondateur à vie. Aucune carte bancaire requise.</p>
-    <p style="font-size:13px; color:var(--ink-muted); margin-bottom:24px;">Après la bêta, à partir de <strong style="color:var(--ink);">25 € / mois</strong> — résiliable à tout moment.</p>
 
     <div class="cta-form-wrap">
       <div class="cta-social-proof">
-        <div class="sp-avatars" role="img" aria-label="Avatars de praticiens inscrits">
-          <div class="sp-avatar" style="background:#1E3448;" aria-hidden="true">DR</div>
-          <div class="sp-avatar" style="background:#007A6E;" aria-hidden="true">ML</div>
-          <div class="sp-avatar" style="background:#B8973A;" aria-hidden="true">PB</div>
-          <div class="sp-avatar" style="background:#4A5E72;" aria-hidden="true">SC</div>
-          <div class="sp-avatar" style="background:#2D6A4F;" aria-hidden="true">TF</div>
+        <div class="sp-avatars">
+          <div class="sp-avatar" style="background:#1E3448;">DR</div>
+          <div class="sp-avatar" style="background:#007A6E;">ML</div>
+          <div class="sp-avatar" style="background:#B8973A;">PB</div>
+          <div class="sp-avatar" style="background:#4A5E72;">SC</div>
+          <div class="sp-avatar" style="background:#2D6A4F;">TF</div>
         </div>
         <div class="sp-text">
-          <span class="sp-pulse" aria-hidden="true"></span>
-          <strong>47 praticiens</strong> déjà inscrits · <span style="color:#9E7E2E; font-weight:500;">Bêta ouverte jusqu'au 30 avril</span>
+          <span class="sp-pulse"></span>
+          <strong id="cta-counter">47 praticiens</strong> déjà inscrits · <span style="color:#C53030; font-weight:500;">3 places restantes</span>
         </div>
       </div>
-      <form class="cta-input-row" id="cta-form" onsubmit="submitForm(event,'cta-form','cta-success')">
-        <input type="email" name="email" placeholder="votre@cabinet.fr" required autocomplete="email">
-        <button type="submit">Réserver ma place →</button>
-      </form>
-      <div class="cta-success-msg" id="cta-success">✓ Votre place est réservée. Vous recevrez un e-mail de confirmation dans les 24 heures.</div>
+      <div class="cta-input-row" id="cta-row">
+        <input type="email" id="cta-email" placeholder="adresse@cabinet.fr" autocomplete="email" />
+        <button onclick="submitCTA()">Réserver ma place →</button>
+      </div>
+      <div class="cta-success-msg" id="cta-success">
+        ✓ Votre place est réservée. Vous recevrez un e-mail de confirmation dans les 24 heures.
+      </div>
       <p class="cta-note">🔒 Vos informations ne seront jamais partagées ni revendues.</p>
     </div>
   </div>
@@ -1289,46 +982,82 @@ footer {
 <footer>
   <a href="#" class="footer-logo">Répondr<em>IA</em></a>
   <ul class="footer-links">
+    <li><a href="/repondre-avis-google-cabinet-dentaire.html">Blog</a></li>
     <li><a href="https://www.iubenda.com/privacy-policy/10819987" target="_blank" rel="noopener">Mentions légales</a></li>
     <li><a href="https://www.iubenda.com/privacy-policy/10819987" target="_blank" rel="noopener">Confidentialité</a></li>
-    <li><a href="https://www.iubenda.com/privacy-policy/10819987/cookie-policy" target="_blank" rel="noopener">RGPD</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#ef8d808185809a9daf9d8a9f80818b9d868ec1899d">Contact</a></li>
+    <li><a href="https://www.iubenda.com/privacy-policy/10819987" target="_blank" rel="noopener">RGPD</a></li>
+    <li><a href="mailto:bonjour@repondria.fr">Contact</a></li>
   </ul>
   <div class="footer-rgpd">© 2026 RepondrIA · Solution de gestion des avis Google pour cabinets dentaires en France · Toutes les réponses générées sont conformes au Code de déontologie de l'ONCD</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function submitForm(e, formId, successId) {
-  e.preventDefault();
-  var form = document.getElementById(formId);
-  var btn = form.querySelector('button');
-  var email = form.querySelector('input[type="email"]').value;
-  if (!email) return;
-  btn.disabled = true;
-  btn.textContent = 'Envoi...';
-  fetch('https://formspree.io/f/maqlylbe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({ email: email, form: formId })
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    form.style.display = 'none';
-    var msg = document.getElementById(successId);
-    msg.style.display = 'block';
-  })
-  .catch(function() {
-    btn.disabled = false;
-    btn.textContent = formId === 'hero-form' ? "Démarrer gratuitement" : "Réserver ma place →";
-    alert('Une erreur est survenue. Veuillez réessayer.');
-  });
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function submitHero() {
+  const email = document.getElementById('hero-email').value.trim();
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    document.getElementById('hero-email').style.outline = '2px solid #FC8181';
+    document.getElementById('hero-email').focus();
+    return;
+  }
+  document.getElementById('hero-form').style.display = 'none';
+  document.getElementById('hero-success').style.display = 'block';
+  incrementCounter();
+  // TODO: replace with Brevo or Tally webhook
+  console.log('Waitlist signup:', email);
 }
 
-// Countdown to April 30, 2026
-(function() {
-  var daysEl = document.getElementById('days-num');
-  if (!daysEl) return;
-  var target = new Date('2026-04-30T23:59:59');
-  function update() {
-    var diff = target - new Date();
-    if (diff <= 0) { daysEl.parentElement.textContent =
+function incrementCounter() {
+  const el = document.getElementById('cta-counter');
+  if (!el) return;
+  const current = parseInt(el.textContent);
+  if (isNaN(current)) return;
+  const next = current + 1;
+  el.style.transition = 'opacity 0.2s';
+  el.style.opacity = '0';
+  setTimeout(() => {
+    el.textContent = next + ' praticiens';
+    el.style.opacity = '1';
+  }, 200);
+}
+
+// Subtle live counter — increments slowly to create organic urgency
+let count = 47;
+function slowTick() {
+  const delay = 25000 + Math.random() * 45000; // every 25–70s
+  setTimeout(() => {
+    count++;
+    const el = document.getElementById('cta-counter');
+    if (el) {
+      el.style.transition = 'opacity 0.3s';
+      el.style.opacity = '0';
+      setTimeout(() => {
+        el.textContent = count + ' praticiens';
+        el.style.opacity = '1';
+      }, 300);
+    }
+    slowTick();
+  }, delay);
+}
+slowTick();
+}
+
+function submitCTA() {
+  const email = document.getElementById('cta-email').value.trim();
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    document.getElementById('cta-email').style.outline = '2px solid #FC8181';
+    document.getElementById('cta-email').focus();
+    return;
+  }
+  document.getElementById('cta-row').style.display = 'none';
+  document.getElementById('cta-success').style.display = 'block';
+  incrementCounter();
+  // TODO: replace with Brevo or Tally webhook
+  console.log('CTA signup:', email);
+}
+
+// Enter key support
+document.querySelectorAll('input[type="email"]').forEach(input => {
+  input.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    if (input.id === 'hero-email') submitHero();
+    if (in
