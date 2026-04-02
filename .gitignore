@@ -1,0 +1,12 @@
+# Local-only folders — not part of the Netlify deploy
+RepondrIA Launch Tracker/
+repondria-demo/
+
+# macOS
+.DS_Store
+
+# Local scripts
+gsc_submit.py
+service_account.json
+repondria_crm.csv
+repondria-netlify.zip
