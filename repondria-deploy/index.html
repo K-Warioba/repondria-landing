@@ -682,6 +682,66 @@ footer {
   footer { flex-direction: column; align-items: flex-start; }
   .footer-links { flex-wrap: wrap; gap: 16px; }
 }
+
+@media (max-width: 640px) {
+  nav { padding: 0 20px; height: 60px; }
+  .nav-pill { font-size: 11px; padding: 5px 10px; }
+
+  .hero {
+    padding: 88px 20px 48px;
+    gap: 40px;
+  }
+  h1 { font-size: clamp(32px, 8vw, 42px); letter-spacing: -0.3px; }
+  h1 br { display: none; }
+  .hero-body { font-size: 16px; margin-bottom: 32px; }
+
+  .waitlist-form { flex-direction: column; }
+  .waitlist-form input { width: 100%; height: 52px; border-bottom: 1px solid var(--border); }
+  .waitlist-form button { width: 100%; height: 50px; }
+
+  .form-caption {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 11px;
+  }
+
+  .counter-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+  .counter-divider { display: none; }
+  .counter-num { font-size: 24px; }
+  .counter-label { font-size: 10px; white-space: normal; }
+
+  .card-stack { padding: 4px !important; }
+  .card-content { padding: 14px; }
+
+  .divider { padding: 0 20px; gap: 14px; }
+
+  .features { padding: 56px 20px; }
+  .feat { padding: 28px 22px; }
+  .section-title br { display: none; }
+  .section-sub { font-size: 15px; margin-bottom: 36px; }
+
+  .compliance { padding: 56px 20px; }
+  .compliance-inner { gap: 32px; }
+  .compliance .section-title br { display: none; }
+
+  .how { padding: 56px 20px; }
+
+  .cta-bottom { padding: 56px 20px; }
+  .cta-title br { display: none; }
+  .cta-input-row { flex-direction: column; }
+  .cta-input-row input { width: 100%; height: 50px; border-bottom: 1px solid var(--border); }
+  .cta-input-row button { width: 100%; height: 48px; }
+  .cta-social-proof { flex-wrap: wrap; justify-content: center; text-align: center; }
+  .cta-social-proof .sp-text { flex-basis: 100%; }
+
+  footer { padding: 24px 20px; }
+}
 </style>
 </head>
 <body>
@@ -1039,7 +1099,6 @@ function slowTick() {
   }, delay);
 }
 slowTick();
-}
 
 function submitCTA() {
   const email = document.getElementById('cta-email').value.trim();
@@ -1060,4 +1119,10 @@ document.querySelectorAll('input[type="email"]').forEach(input => {
   input.addEventListener('keydown', e => {
     if (e.key !== 'Enter') return;
     if (input.id === 'hero-email') submitHero();
-    if (in
+    if (input.id === 'cta-email') submitCTA();
+  });
+});
+</script>
+
+</body>
+</html>
